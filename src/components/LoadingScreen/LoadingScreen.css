@@ -1,0 +1,37 @@
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f0f0f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+
+/* .cont-logo--load {
+  width: 100%;
+} */
+
+.logo--load {
+  margin: 0 auto;
+  background-image: url("../../../public/Outlook-pn3qpvew.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 150px;
+  animation: zoomIn 1s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
