@@ -17,6 +17,7 @@
   padding: 1em;
   text-align: center;
   position: relative;
+  transition: border-color 0.5s ease;
 }
 
 .radio-box--input {
@@ -27,6 +28,10 @@
 
 .radio-box--input input:checked ~ .radio-box {
   background-color: #00ff8c;
+}
+
+.radio-box.selected {
+  border: 2px solid blue;
 }
 
 .radio-box--icon {

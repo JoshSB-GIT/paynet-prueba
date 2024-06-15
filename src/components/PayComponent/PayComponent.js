@@ -62,7 +62,11 @@ function PayComponent(props) {
           <div className="box-content">
             <form className="form-control" onSubmit={handleSubmit}>
               <div className="input-col-4">
-                <div className="radio-box">
+                <div
+                  className={`radio-box ${
+                    selectedPaymentMethod === "efectivo" ? "selected" : ""
+                  }`}
+                >
                   <div className="radio-box--input">
                     <input
                       type="radio"
@@ -86,7 +90,11 @@ function PayComponent(props) {
                   </div>
                 </div>
 
-                <div className="radio-box">
+                <div
+                  className={`radio-box ${
+                    selectedPaymentMethod === "pse" ? "selected" : ""
+                  }`}
+                >
                   <div className="radio-box--input">
                     <input
                       type="radio"
@@ -110,7 +118,11 @@ function PayComponent(props) {
                   </div>
                 </div>
 
-                <div className="radio-box">
+                <div
+                  className={`radio-box ${
+                    selectedPaymentMethod === "corresponsal" ? "selected" : ""
+                  }`}
+                >
                   <div className="radio-box--input">
                     <input
                       type="radio"
@@ -134,7 +146,11 @@ function PayComponent(props) {
                   </div>
                 </div>
 
-                <div className="radio-box">
+                <div
+                  className={`radio-box ${
+                    selectedPaymentMethod === "datafono" ? "selected" : ""
+                  }`}
+                >
                   <div className="radio-box--input">
                     <input
                       type="radio"
@@ -160,7 +176,10 @@ function PayComponent(props) {
               </div>
               <div className="col-buttom-3">
                 <div className="cont-button-3">
-                  <button className="btn btn-danger-outline-custom">
+                  <button
+                    className="btn btn-danger-outline-custom"
+                    onClick={handleCancel}
+                  >
                     Cancelar
                   </button>
                 </div>
