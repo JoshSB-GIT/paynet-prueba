@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { HeaderNav } from "./components/HeaderNav/HeaderNav";
+import { Liquidation } from "./components/Liquidation/Liquidation";
+import { MainComponent } from "./components/MainComponent/MainComponent";
+import { GeneralInfo } from "./components/GeneralInfo/GeneralInfo";
+import { PayComponent } from "./components/PayComponent/PayComponent";
+import "./App.css";
 
 function App() {
+  const [generalInfoSubmitted, setGeneralInfoSubmitted] = useState(false);
+  const [liquidationSubmitted, setLiquidationSubmitted] = useState(false);
+
+  const handleGeneralInfoSubmit = () => {
+    setGeneralInfoSubmitted(true);
+  };
+
+  const handleLiquidationSubmit = () => {
+    setLiquidationSubmitted(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HeaderNav />
+      <MainComponent>
+        <GeneralInfo onFormSubmit={handleGeneralInfoSubmit} />
+        <Liquidation
+          generalInfoSubmitted={generalInfoSubmitted}
+          onFormSubmit={handleLiquidationSubmit}
+        />
+        <PayComponent liquidationSubmitted={liquidationSubmitted} />
+      </MainComponent>
+    </>
   );
 }
 
